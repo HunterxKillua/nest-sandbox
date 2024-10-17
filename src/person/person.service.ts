@@ -4,6 +4,7 @@ import { UpdatePersonDto } from './dto/update-person.dto';
 
 @Injectable()
 export class PersonService {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   create(_createPersonDto: CreatePersonDto) {
     return 'This action adds a new person';
   }
@@ -16,6 +17,7 @@ export class PersonService {
     return `This action returns a #${id} person`;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   update(id: number, _updatePersonDto: UpdatePersonDto) {
     return `This action updates a #${id} person`;
   }

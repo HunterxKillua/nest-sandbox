@@ -8,9 +8,14 @@ import {
   Body,
   HttpException,
   HttpStatus,
-  ParseIntPipe,
+  ParseEnumPipe,
 } from '@nestjs/common';
 import { AppService } from './app.service';
+
+export enum StatusEnum {
+  SUCCESS = 0,
+  ERROR = 1,
+}
 
 @Controller()
 export class AppController {
@@ -20,7 +25,7 @@ export class AppController {
   // @Redirect('https://nestjs.com', 301)
   getHello(
     @Query('name') name: string,
-    @Body('status', ParseIntPipe) status: 0 | 1,
+    @Body('status', new ParseEnumPipe(StatusEnum)) status: 0 | 1,
   ): string {
     try {
       return this.appService.getHello(name, status);
