@@ -88,7 +88,7 @@ SELECT * FROM permission;
 -- 查看用户和角色的关系
 SELECT 
   u.username, 
-  r.name as role 
+  r.name as role
 FROM user u
 LEFT JOIN user_roles_role urr ON u.id = urr.userId
 LEFT JOIN role r ON urr.roleId = r.id;
